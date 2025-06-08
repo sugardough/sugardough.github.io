@@ -44,23 +44,22 @@
       padding: 20px;
     }
 
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-}
+    .sidebar-footer {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: auto;
+    }
 
-.fa:hover {
-  opacity: 0.7;
-}
-    
-.fa-instagram {
-  background: #125688;
-  color: white;
-}
+    .sidebar-footer a img {
+      width: 24px;
+      height: 24px;
+      transition: none; /* disable hover effects */
+    }
+
+    .sidebar-footer a:hover img {
+      filter: none; /* disable color change on hover */
+    }
     
   </style>
 </head>
@@ -72,9 +71,9 @@
     <a href="comics.html" class="nav-link">COMICS</a>
     <a href="development.html" class="nav-link">DEVELOPMENT</a>
     <a href="index.html" class="nav-link">ILLUSTRATIONS</a>
-        
-    <div class="social-icons">
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    
+    <div class="sidebar-footer">
+      <a href="https://instagram.com" target="_blank"><img src="icons/instagram.png" alt="Instagram Icon"></a>
     </div>
   </div>
       
