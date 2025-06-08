@@ -12,51 +12,51 @@
       margin: 0;
       font-family: Helvetica, sans-serif;
     }
-    
-.pill-nav a {
-  display: inline-block;
-  color: black;
-  text-align: center;
-  padding: 15px;
-  text-decoration: none;
-  font-size: 18px;
-  border-radius: 10px;
-}
-    
-.pill-nav {
-  display: flex;
-  gap: 10px;
-}
+        .sidebar {
+      height: 100vh;
+      width: 200px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+    }
 
+    /* Nav Links */
+    .sidebar a {
+      padding: 15px 20px;
+      text-decoration: none;
+      font-size: 16px;
+      color: white;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #222;
+    }
 
-.pill-nav a:hover {
-  background-color: #FFAEBC;
-  color: white;
-}
-    
-.pill-nav a.active {
-  background-color: #FFAEBC;
-  color: white;
-}
-    
-.nav-wrapper {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  margin-top: 20px; /* Space from top of the screen */
-}
+    .sidebar a:hover {
+      background-color: #FFAEBC;
+      color: black;
+    }
+
+    /* Page Content shifts to the right of sidebar */
+    .content {
+      margin-left: 200px;
+      padding: 20px;
+    }
     
   </style>
 </head>
   
 <body>
-  <div class="nav-wrapper">
-    <div class="pill-nav">
+    <div class="sidebar">
       <a href="about.html" class="nav-link">ABOUT</a>
       <a href="animations.html" class="nav-link">ANIMATIONS</a>
       <a href="comics.html" class="nav-link">COMICS</a>
       <a href="development.html" class="nav-link">DEVELOPMENT</a>
       <a href="index.html" class="nav-link">ILLUSTRATIONS</a>
-  </div> 
   
   <script src="script.js"></script>
 </body>
