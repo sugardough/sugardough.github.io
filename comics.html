@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zoya</title>
+  <link rel="icon" href="girl.gif" type="image/gif" />
+  <style>
+    body {
+      background-color: #9B1313;
+      color: black;
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      font-weight: 400;
+    }
 
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+    }
+    
+    .sidebar {
+      height: 100vh;
+      width: 200px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+    }
+
+    .sidebar a {
+      padding: 15px 20px;
+      text-decoration: none;
+      font-size: 14px;
+      color: black;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .sidebar a:hover {
+      background-color: #780606;
+      color: white;
+    }
+
+    .content {
+      margin-left: 200px;
+      padding: 20px;
+    }
+
+    .sidebar-footer {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 400px;
+    }
+
+    .sidebar-footer a img {
+      width: 24px;
+      height: 24px;
+      transition: none;
+    }
+
+    .sidebar-footer a:hover img {
+      filter: none;
+    }
+
+    .sidebar-footer a {
+      background: none;
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+
+    .sidebar-footer a:hover {
+      background: none;
+    }
+    
+  </style>
+</head>
+  
+<body>
+  <div class="sidebar">
+    <a href="about.html" class="nav-link">ABOUT</a>
+    <a href="animations.html" class="nav-link">ANIMATIONS</a>
+    <a href="comics.html" class="nav-link">COMICS</a>
+    <a href="development.html" class="nav-link">DEVELOPMENT</a>
+    <a href="index.html" class="nav-link">ILLUSTRATIONS</a>
+    
+    <div class="sidebar-footer">
+      <a href="https://instagram.com" target="_blank"><img src="instagram-svgrepo-com.svg" alt="insta" width="30" height="30" viewBox="0 0 24 24"></a>
+      <a href="https://youtube.com" target="_blank"><img src="youtube-svgrepo-com.svg" alt="youtube" width="30" height="30" viewBox="0 0 24 24"></a>
+    </div>
+  </div>
+      
+  <script src="script.js"></script>
+</body>
+  
+</html>
