@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Zoya</title>
+  <title>Me</title>
   <link rel="icon" href="tumblr_lkl5l97pRY1qfamg6.png" type="image/gif" />
   <style>
     body {
@@ -21,7 +21,7 @@
       text-decoration: none;
       margin: 5px 2px;
     }
-    
+
     .sidebar {
       height: 100vh;
       width: 200px;
@@ -31,7 +31,9 @@
       background-color: white;
       display: flex;
       flex-direction: column;
+      justify-content: space-between; /* Ensures footer stays at the bottom */
       padding-top: 20px;
+      padding-bottom: 20px;
     }
 
     .sidebar a {
@@ -39,7 +41,6 @@
       text-decoration: none;
       font-size: 14px;
       color: black;
-      display: block;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -58,7 +59,6 @@
       display: flex;
       gap: 10px;
       justify-content: center;
-      margin-top: 400px;
     }
 
     .sidebar-footer a img {
@@ -80,25 +80,26 @@
     .sidebar-footer a:hover {
       background: none;
     }
-    
   </style>
 </head>
-  
+
 <body>
   <div class="sidebar">
-    <a href="about.html" class="nav-link">ABOUT</a>
-    <a href="animations.html" class="nav-link">ANIMATIONS</a>
-    <a href="comics.html" class="nav-link">COMICS</a>
-    <a href="development.html" class="nav-link">DEVELOPMENT</a>
-    <a href="index.html" class="nav-link">ILLUSTRATIONS</a>
-    
+    <div>
+      <a href="about.html" class="nav-link">ABOUT</a>
+      <a href="animations.html" class="nav-link">ANIMATIONS</a>
+      <a href="comics.html" class="nav-link">COMICS</a>
+      <a href="development.html" class="nav-link">DEVELOPMENT</a>
+      <a href="index.html" class="nav-link">ILLUSTRATIONS</a>
+    </div>
+
     <div class="sidebar-footer">
-      <a href="https://instagram.com" target="_blank"><img src="instagram-svgrepo-com.svg" alt="insta" width="30" height="30" viewBox="0 0 24 24"></a>
-      <a href="https://youtube.com" target="_blank"><img src="youtube-svgrepo-com.svg" alt="youtube" width="30" height="30" viewBox="0 0 24 24"></a>
+      <a href="https://instagram.com" target="_blank"><img src="instagram-svgrepo-com.svg" alt="insta"></a>
+      <a href="https://youtube.com" target="_blank"><img src="youtube-svgrepo-com.svg" alt="youtube"></a>
     </div>
   </div>
-      
+
   <script src="script.js"></script>
 </body>
-  
+
 </html>
