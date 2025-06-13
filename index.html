@@ -66,19 +66,14 @@
     }
     
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
+      column-count: 3;
+      column-gap: 20px;
     }
     
-    .gallery img {
-      height: 300px;
-      width: auto;
-      border: 2px solid white;
-      cursor: pointer;
-      object-fit: contain;
-      display: block;
+     .gallery img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
     }
     
     .sidebar-footer {
