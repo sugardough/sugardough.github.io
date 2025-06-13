@@ -160,27 +160,27 @@
 
   <script>
     const buttons = document.querySelectorAll('.tabs button');
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-    
-    const buttons = document.querySelectorAll('.tabs button');
     const images = document.querySelectorAll('.gallery img');
     
     buttons.forEach(button => {
       button.addEventListener('click', () => {
+        // Set active class
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+    
+        // Get the filter category
         const filter = button.getAttribute('data-filter');
-
-    images.forEach(img => {
-      if (filter === 'all' || img.classList.contains(filter)) {
-        img.style.display = 'inline-block';
-      } else {
-        img.style.display = 'none';
-      }
+    
+        // Show/hide images
+        images.forEach(img => {
+          if (filter === 'all' || img.classList.contains(filter)) {
+            img.style.display = 'inline-block';
+          } else {
+            img.style.display = 'none';
+          }
+        });
+      });
     });
-  });
-});
 </script>
 </body>
 
