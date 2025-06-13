@@ -70,11 +70,13 @@
       flex-wrap: wrap;
       gap: 20px;
     }
-
+    
     .gallery img {
-      width: 100%;
-      max-width: 200px; /* still limits how big they get */
-      flex: 1 1 auto; /* optional for responsive flex behavior */
+      max-width: 100%;
+      height: auto;
+      border: 2px solid white;
+      cursor: pointer;
+      object-fit: contain;
     }
 
     .lightbox {
