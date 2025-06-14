@@ -183,16 +183,22 @@
     </div>
       
     <div class="video-gallery">
-      <div class="video-wrapper original">
+      <div class="video-wrapper cards">
         <video src="video1.mp4" controls></video>
       </div>
-      <div class="video-wrapper cards">
-        <video src="video2.mp4" controls></video>
-      </div>
+        
+      <div class="video-wrapper original">
+          <iframe 
+            src="https://www.youtube.com/embed/paWE-GvDO1c" 
+            frameborder="0" 
+            allowfullscreen>
+          </iframe>
+        </div>
+            
       <div class="video-wrapper foils">
-        <video src="video3.mp4" controls></video>
+            <video src="video3.mp4" controls></video>
+          </div>
       </div>
-  </div>
 
   <script>
     const buttons = document.querySelectorAll('.tabs button');
