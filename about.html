@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Zoya</title>
+  <title>Zoya Newman</title>
   <link rel="icon" href="mush.gif" type="image/gif" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
     body {
       background-color: #9B1313;
       color: black;
       margin: 0;
-      font-family: 'Rubik', sans-serif;
+      font-family: "M PLUS Rounded 1c", sans-serif;
       font-weight: 400;
+      overflow-x: hidden;
     }
 
     .fa {
@@ -23,17 +25,18 @@
     }
 
     .sidebar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
       height: 100vh;
       width: 200px;
       position: fixed;
       top: 0;
       left: 0;
       background-color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between; /* Ensures footer stays at the bottom */
-      padding-top: 10px;
-      padding-bottom: 40px; /* Increased spacing at the bottom */
+      padding: 20px 0;
+      box-sizing: border-box;
     }
 
     .sidebar a {
@@ -52,11 +55,73 @@
       color: white;
     }
 
-    .content {
-      margin-left: 200px;
-      padding: 20px;
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      margin-top: 10px;
+    }
+    
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: right;
+      gap: 4px; /* tight spacing between links */
+      margin-bottom: auto; /* 👈 this is the key: keeps links near top */
+      margin-top: 25px;
+      display: block; /* 👈 this is key */
+      width: 100%;  
     }
 
+    .content {
+      margin-left: 200px;
+      padding: 30px;
+      box-sizing: border-box;
+      max-width: calc(100vw - 200px);
+    }
+    
+    .tabs {
+      display: flex;
+      justify-content: center;  /* centers the buttons horizontally */
+      gap: 20px;                /* space between buttons */
+      margin-bottom: 20px;      /* optional spacing below */
+    }
+    
+    .tabs button {
+      background: none;
+      border: none;
+      font-family: "M PLUS Rounded 1c", sans-serif;
+      font-weight: 400;
+      color: white; /* or whatever text color you want */
+      padding: 10px 20px; /* you can keep this or adjust */
+      cursor: pointer;
+    }
+
+    .tabs button.active {
+      text-decoration: underline;
+    }
+    
+    .gallery {
+      column-count: 3;
+      column-gap: 20px;
+    }
+    
+     .gallery img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .gallery-header {
+      text-align: center;
+      color: white;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    
     .sidebar-footer {
       display: flex;
       gap: 10px;
@@ -82,12 +147,15 @@
     .sidebar-footer a:hover {
       background: none;
     }
+    
   </style>
 </head>
 
 <body>
   <div class="sidebar">
-    <div>
+    <img src="takuya-nagaoka-fENvSZUzbzU-unsplash.jpg" alt="Me!" class="profile-pic">
+      
+    <div class="nav-links">
       <a href="about.html" class="nav-link">ABOUT</a>
       <a href="animations.html" class="nav-link">ANIMATIONS</a>
       <a href="comics.html" class="nav-link">COMICS</a>
@@ -99,10 +167,59 @@
       <a href="https://instagram.com" target="_blank"><img src="instagram-svgrepo-com.svg" alt="insta"></a>
       <a href="https://youtube.com" target="_blank"><img src="youtube-svgrepo-com.svg" alt="youtube"></a>
       <a href="https://linkedin.com" target="_blank"><img src="linkedin-svgrepo-com(1).svg" alt="linkedin"></a>
+    </div>  
+  </div>
+
+    <div class="content">
+      <header>
+        <h1 class="gallery-header">✦ ILLUSTRATIONS ✦</h1>
+      </header>
+    <div class="tabs">
+      <button class="active" data-filter="all">ALL</button>
+      <button data-filter="cards">CARDS</button>
+      <button data-filter="fairytales">FAIRYTALES</button>
+      <button data-filter="fandoms">FANDOMS</button>
+      <button data-filter="foils">FOILS</button>
+      <button data-filter="original">ORIGINAL</button>
+    </div>
+
+    <div class="gallery">
+      <img src="erik-jan-leusink-gr1UYHBFkD4-unsplash.jpg" class="original" alt="Art 1">
+      <img src="jae-park-7GX5aICb5i4-unsplash.jpg" class="fairytales" alt="Art 2">
+      <img src="jasmin-schuler-PUTVh0Z_qNQ-unsplash.jpg" class="foils" alt="Art 3">
+      <img src="kate-stone-matheson-uy5t-CJuIK4-unsplash.jpg" class="fandoms" alt="Art 4">
+      <img src="michael-sum-LEpfefQf4rU-unsplash.jpg" class="original" alt="Art 5">
+      <img src="rana-sawalha-X7UR0BDz-UY-unsplash.jpg" class="original" alt="Art 6">
+      <img src="raoul-droog-yMSecCHsIBc-unsplash.jpg" class="fandoms" alt="Art 7">
+      <img src="raquel-pedrotti-AHgpNYkX9dc-unsplash.jpg" class="foils" alt="Art 8">
+      <img src="the3dragons-mSOUgRr7wyU-unsplash.jpg" class="cards" alt="Art 9">
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    const buttons = document.querySelectorAll('.tabs button');
+    const images = document.querySelectorAll('.gallery img');
+    
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Set active class
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+    
+        // Get the filter category
+        const filter = button.getAttribute('data-filter');
+    
+        // Show/hide images
+        images.forEach(img => {
+          if (filter === 'all' || img.classList.contains(filter)) {
+            img.style.display = 'inline-block';
+          } else {
+            img.style.display = 'none';
+          }
+        });
+      });
+    });
+</script>
 </body>
 
 </html>
