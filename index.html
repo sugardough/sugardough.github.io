@@ -104,23 +104,19 @@
       text-decoration: underline;
     }
     
-    .gallery {
-      column-count: 3;
-      column-gap: 20px;
+    .gallery img {
+      transition: transform 0.3s ease; /* smooth zoom */
     }
     
-     .gallery img {
-      width: 100%;
-      height: auto;
-      margin-bottom: 20px;
-      border-radius: 8px; 
+    .gallery img:hover {
+      transform: scale(1.05); /* zoom in by 5% */
+      cursor: pointer;
     }
 
-    .gallery-header {
-      text-align: center;
-      color: white;
-      margin-top: 5px;
-      margin-bottom: 5px;
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
     }
     
     .sidebar-footer {
