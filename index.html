@@ -39,6 +39,13 @@
       box-sizing: border-box;
     }
 
+    .top-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px; /* this is the space between pic and links */
+    }
+
     .sidebar a {
       padding: 15px 20px;
       text-decoration: none;
@@ -150,6 +157,7 @@
 
 <body>
   <div class="sidebar">
+    <div class="top-section">
     <img src="takuya-nagaoka-fENvSZUzbzU-unsplash.jpg" alt="Me!" class="profile-pic">
       
     <div class="nav-links">
