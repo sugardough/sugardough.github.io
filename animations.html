@@ -189,7 +189,7 @@
       <button data-filter="original">ORIGINAL</button>
     </div>
       
-    <div class="video-gallery">
+    <div class="gallery">
       <div class="gallery-item cards">
         <video src="video1.mp4" controls></video>
       </div>
@@ -208,6 +208,7 @@
   </div>
 
   <script>
+    const buttons = document.querySelectorAll('.tabs button');
     const galleryItems = document.querySelectorAll('.gallery-item');
     
     buttons.forEach(button => {
