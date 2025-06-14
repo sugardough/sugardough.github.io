@@ -54,6 +54,16 @@
       color: white;
     }
 
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%; /* this is what makes it a circle! */
+      object-fit: cover;
+      margin: 0 auto 20px;
+      display: block;
+      border: 2px solid #000; /* or white, or none */
+    }
+
     .content {
       margin-left: 200px;
       padding: 30px;
@@ -131,7 +141,7 @@
 
 <body>
   <div class="sidebar">
-    <div>
+    <img src="your-profile.jpg" alt="Your Name" class="profile-pic">
       <a href="about.html" class="nav-link">ABOUT</a>
       <a href="animations.html" class="nav-link">ANIMATIONS</a>
       <a href="comics.html" class="nav-link">COMICS</a>
