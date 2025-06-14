@@ -25,17 +25,17 @@
     }
 
     .sidebar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
       height: 100vh;
       width: 200px;
       position: fixed;
       top: 0;
       left: 0;
       background-color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between; /* 👈 splits top and bottom */
-      padding: 10px 0;
+      padding: 20px 0;
       box-sizing: border-box;
     }
 
@@ -58,19 +58,19 @@
     .profile-pic {
       width: 150px;
       height: 150px;
-      border-radius: 50%; /* this is what makes it a circle! */
+      border-radius: 50%;
       object-fit: cover;
       display: block;
       margin: 0 auto;
       margin-top: 10px;
     }
-
+    
     .nav-links {
       display: flex;
       flex-direction: column;
-      align-items: right;
-      gap: 4px;
-      margin-top: -90px;
+      align-items: center;
+      gap: 4px; /* tight spacing between links */
+      margin-bottom: auto; /* 👈 this is the key: keeps links near top */
     }
 
     .content {
