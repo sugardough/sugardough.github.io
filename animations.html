@@ -148,6 +148,23 @@
       background: none;
     }
     
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .video-wrapper video,
+    .video-wrapper iframe {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+    
   </style>
 </head>
 
@@ -182,18 +199,17 @@
       <button data-filter="foils">FOILS</button>
       <button data-filter="original">ORIGINAL</button>
     </div>
-
-    <div class="gallery">
-      <img src="erik-jan-leusink-gr1UYHBFkD4-unsplash.jpg" class="original" alt="Art 1">
-      <img src="jae-park-7GX5aICb5i4-unsplash.jpg" class="fairytales" alt="Art 2">
-      <img src="jasmin-schuler-PUTVh0Z_qNQ-unsplash.jpg" class="foils" alt="Art 3">
-      <img src="kate-stone-matheson-uy5t-CJuIK4-unsplash.jpg" class="fandoms" alt="Art 4">
-      <img src="michael-sum-LEpfefQf4rU-unsplash.jpg" class="original" alt="Art 5">
-      <img src="rana-sawalha-X7UR0BDz-UY-unsplash.jpg" class="original" alt="Art 6">
-      <img src="raoul-droog-yMSecCHsIBc-unsplash.jpg" class="fandoms" alt="Art 7">
-      <img src="raquel-pedrotti-AHgpNYkX9dc-unsplash.jpg" class="foils" alt="Art 8">
-      <img src="the3dragons-mSOUgRr7wyU-unsplash.jpg" class="cards" alt="Art 9">
-    </div>
+      
+    <div class="video-gallery">
+      <div class="video-wrapper original">
+        <video src="video1.mp4" controls></video>
+      </div>
+      <div class="video-wrapper cards">
+        <video src="video2.mp4" controls></video>
+      </div>
+      <div class="video-wrapper foils">
+        <video src="video3.mp4" controls></video>
+      </div>
   </div>
 
   <script>
