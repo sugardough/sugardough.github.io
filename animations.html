@@ -201,8 +201,7 @@
       </div>
 
   <script>
-    const buttons = document.querySelectorAll('.tabs button');
-    const images = document.querySelectorAll('.gallery img');
+    const items = document.querySelectorAll('.video-wrapper');
     
     buttons.forEach(button => {
       button.addEventListener('click', () => {
@@ -213,12 +212,11 @@
         // Get the filter category
         const filter = button.getAttribute('data-filter');
     
-        // Show/hide images
-        images.forEach(img => {
-          if (filter === 'all' || img.classList.contains(filter)) {
-            img.style.display = 'inline-block';
+        videoWrappers.forEach(video => {
+          if (filter === 'all' || video.classList.contains(filter)) {
+            video.style.display = 'inline-block';
           } else {
-            img.style.display = 'none';
+            video.style.display = 'none';
           }
         });
       });
