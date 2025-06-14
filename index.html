@@ -33,9 +33,10 @@
       background-color: white;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* Ensures footer stays at the bottom */
-      padding-top: 10px;
-      padding-bottom: 40px; /* Increased spacing at the bottom */
+      align-items: center;
+      justify-content: space-between; /* 👈 splits top and bottom */
+      padding: 20px 0;
+      box-sizing: border-box;
     }
 
     .sidebar a {
@@ -62,6 +63,13 @@
       margin: 0 auto 20px;
       display: block;
       border: 2px solid #000; /* or white, or none */
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px; /* nice spacing */
     }
 
     .content {
@@ -142,6 +150,8 @@
 <body>
   <div class="sidebar">
     <img src="takuya-nagaoka-fENvSZUzbzU-unsplash.jpg" alt="Me!" class="profile-pic">
+      
+    <div class="nav-links">
       <a href="about.html" class="nav-link">ABOUT</a>
       <a href="animations.html" class="nav-link">ANIMATIONS</a>
       <a href="comics.html" class="nav-link">COMICS</a>
