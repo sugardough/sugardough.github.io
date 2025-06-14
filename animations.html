@@ -130,21 +130,10 @@
       background: none;
     }
     
-    .video-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    
-    .video-wrapper video,
-    .video-wrapper iframe {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    .gallery-item {
+      display: inline-block;
+      margin: 10px;
+      vertical-align: top; /* keeps layout tidy */
     }
     
   </style>
@@ -183,11 +172,11 @@
     </div>
       
     <div class="video-gallery">
-      <div class="video-wrapper cards">
+      <div class="gallery-item cards">
         <video src="video1.mp4" controls></video>
       </div>
         
-      <div class="video-wrapper original">
+      <div class="gallery-item original">
           <iframe 
             src="https://www.youtube.com/embed/paWE-GvDO1c" 
             frameborder="0" 
@@ -195,28 +184,26 @@
           </iframe>
         </div>
             
-      <div class="video-wrapper foils">
+      <div class="gallery-item foils">
             <video src="video3.mp4" controls></video>
           </div>
-      </div>
+  </div>
 
   <script>
-    const items = document.querySelectorAll('.video-wrapper');
+    const galleryItems = document.querySelectorAll('.gallery-item');
     
     buttons.forEach(button => {
       button.addEventListener('click', () => {
-        // Set active class
         buttons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
     
-        // Get the filter category
         const filter = button.getAttribute('data-filter');
     
-        videoWrappers.forEach(video => {
-          if (filter === 'all' || video.classList.contains(filter)) {
-            video.style.display = 'inline-block';
+        galleryItems.forEach(item => {
+          if (filter === 'all' || item.classList.contains(filter)) {
+            item.style.display = 'inline-block';
           } else {
-            video.style.display = 'none';
+            item.style.display = 'none';
           }
         });
       });
