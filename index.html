@@ -52,10 +52,12 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: black;
     }
-
+    
     .sidebar a:hover,
     .sidebar a.active {
-      background: linear-gradient(120deg, #ff007f, #7f00ff, #00ffff);
+      background: linear-gradient(270deg, #ff007f, #7f00ff, #00ffff);
+      background-size: 600% 100%;
+      animation: gradientFlow 3s linear infinite;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       color: transparent;
@@ -63,6 +65,15 @@
 
     .sidebar a {
       will-change: background, -webkit-text-fill-color;
+    }
+
+    @keyframes gradientFlow {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
     }
 
     .profile-pic {
