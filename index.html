@@ -38,21 +38,39 @@
       padding: 20px 0;
       box-sizing: border-box;
     }
-
+    
     .sidebar a {
+      position: relative;
+      display: block;
       padding: 15px 20px;
       text-decoration: none;
       font-size: 14px;
       color: black;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      display: block;
-      margin-bottom: 1px;
+      overflow: hidden;
+      z-index: 1;
+      transition: color 0.3s ease;
+    }
+    
+    .sidebar a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(120deg, #ff007f, #7f00ff, #00ffff);
+      z-index: -1;
+      transition: left 0.4s ease;
     }
 
+    .sidebar a:hover::before {
+      left: 0;
+    }
+    
     .sidebar a:hover {
-      background-color: #780606;
-      color: white;
+      color: white; /* text turns white when hovered */
     }
 
     .profile-pic {
@@ -74,39 +92,6 @@
       margin-top: 25px;
       display: block; /* 👈 this is key */
       width: 100%;  
-      z-index: 0;
-    }
-
-    .nav-link::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 200%;
-      height: 100%;
-      background: linear-gradient(120deg, #ff007f, #7f00ff, #00ffff);
-      background-size: 200% 100%;
-      z-index: -1;
-      transition: left 0.4s ease;
-    }
-
-    .nav-link:hover::before {
-      left: 0;
-    }
-    
-    .nav-link:hover {
-      color: white; /* optional: make text stand out */
-    }
-
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-    
-    .nav-link::before {
-      background: linear-gradient(270deg, #ff007f, #7f00ff, #00ffff);
-      background-size: 600% 100%;
-      animation: gradientMove 2s linear infinite;
     }
 
     .content {
