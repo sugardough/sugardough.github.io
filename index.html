@@ -40,7 +40,6 @@
     }
     
     .sidebar a {
-      position: relative;
       display: block;
       padding: 15px 20px;
       text-decoration: none;
@@ -48,29 +47,14 @@
       color: black;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      overflow: hidden;
-      z-index: 1;
-      transition: color 0.3s ease;
-    }
-    
-    .sidebar a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 200%;
-      height: 100%;
-      background: linear-gradient(120deg, #ff007f, #7f00ff, #00ffff);
-      z-index: -1;
-      transition: left 0.4s ease;
+      transition: all 0.3s ease;
     }
 
-    .sidebar a:hover::before {
-      left: 0;
-    }
-    
     .sidebar a:hover {
-      color: white; /* text turns white when hovered */
+      background: linear-gradient(120deg, #ff007f, #7f00ff, #00ffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
     }
 
     .profile-pic {
