@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Zoya Newman</title>
-  <link rel="icon" href="mush.gif" type="image/gif" />
+  <link rel="icon" href="oni.gif" type="image/gif" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
     body {
@@ -11,7 +11,7 @@
       color: black;
       margin: 0;
       font-family: "M PLUS Rounded 1c", sans-serif;
-      font-weight: 400;
+      font-weight: 500;
       overflow-x: hidden;
     }
 
@@ -38,21 +38,42 @@
       padding: 20px 0;
       box-sizing: border-box;
     }
-
+    
     .sidebar a {
+      display: block;
       padding: 15px 20px;
       text-decoration: none;
       font-size: 14px;
       color: black;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      display: block;
-      margin-bottom: 1px;
+      transition: all 0.3s ease;
+      background: none;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: black;
+    }
+    
+    .sidebar a:hover,
+    .sidebar a.active {
+      background: linear-gradient(120deg, #A7D8C9, #C8A2C8, #F6B48F, #C8A2C8, #A7D8C9);
+      background-size: 1000% 100%;
+      animation: gradientFlow 8s linear infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
     }
 
-    .sidebar a:hover {
-      background-color: #780606;
-      color: white;
+    .sidebar a {
+      will-change: background, -webkit-text-fill-color;
+    }
+
+    @keyframes gradientFlow {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
     }
 
     .profile-pic {
@@ -103,8 +124,8 @@
     .tabs button.active {
       text-decoration: underline;
     }
-    
-    .gallery {
+
+        .gallery {
       column-count: 3;
       column-gap: 20px;
     }
@@ -112,7 +133,10 @@
      .gallery img {
       width: 100%;
       height: auto;
+      border-radius: 8px;
       margin-bottom: 20px;
+      transition: transform 0.3s ease; /* smooth zoom */
+
     }
 
     .gallery-header {
@@ -120,6 +144,12 @@
       color: white;
       margin-top: 5px;
       margin-bottom: 5px;
+    }
+    
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
     }
     
     .sidebar-footer {
@@ -132,6 +162,10 @@
       width: 24px;
       height: 24px;
       transition: none;
+    }
+
+    .sidebar-footer img {
+      margin-top: 6px; /* ⬅️ use this for fine-tuning the icon position */
     }
 
     .sidebar-footer a:hover img {
@@ -160,7 +194,7 @@
       <a href="animations.html" class="nav-link">ANIMATIONS</a>
       <a href="comics.html" class="nav-link">COMICS</a>
       <a href="development.html" class="nav-link">DEVELOPMENT</a>
-      <a href="index.html" class="nav-link">ILLUSTRATIONS</a>
+      <a href="index.html" class="nav-link active">ILLUSTRATIONS</a>
     </div>
 
     <div class="sidebar-footer">
